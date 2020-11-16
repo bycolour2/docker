@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
 
     import sqlite3
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     try:
         cursor.execute('''CREATE TABLE increment (d text)''')
@@ -23,7 +23,7 @@ def hello():
 @app.route("/plus")
 def plus():
     import sqlite3
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     date = "21/9/2020"
     cursor.execute('INSERT INTO increment VALUES ("21/9/2020")')
